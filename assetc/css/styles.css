@@ -1,0 +1,744 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  -webkit-transition-property: fill, stroke;
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../../fonts/Comfortaa-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../../fonts/Comfortaa-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../../fonts/Comfortaa-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Comfortaa";
+  src: url("../../fonts/Comfortaa-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mulish";
+  src: url("../../fonts/Mulish-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mulish";
+  src: url("../../fonts/Mulish-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url("../../fonts/NotoSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --color-dark: #0A1902;
+  --color-white: #FFFFFF;
+  --color-light: #E5E5E5;
+  --color-green: #59BE29;
+  --color-green-light: #82CD5E;
+  --color-green-border: rgba(89, 190, 41, 0.3);
+  --color-shadow: rgba(22, 52, 7, 0.05);
+  --border: 1px solid var(--color-green-border);
+  --border-radius: 20px 80px 20px 80px;
+  --border-radius-small: 10px;
+  --border-radius-circle: 50%;
+  --shadow: 0px 10px 20px var(--color-shadow);
+  --font-family-base: "Comfortaa", sans-serif;
+  --font-family-additional: "Mulish", sans-serif;
+  --font-family-footer: "NotoSans", sans-serif;
+  --container-width: 1240px;
+  --container-padding-x: 20px;
+  --section-padding-y: 60px;
+  --input-height: 59px;
+  --button-height: 55px;
+  --button-height-tablet: 39px;
+  --transition-duration: 0.2s;
+}
+@media (max-width: 1280px) {
+  :root {
+    --section-padding-y: 50px;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --section-padding-y: 30px;
+  }
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  -webkit-clip-path: inset(100%) !important;
+          clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+body {
+  /**
+   Миксин для создания адаптивного текста, который масштабируется в зависимости от ширины экрана. Использует функцию
+   clamp, чтобы установить размер шрифта в промежутке между $min и $max, который автоматически масштабируется с помощью
+   vw (относительные единицы ширины viewport).
+   */
+  font-size: clamp(16px, 1.3043478261vw, 18px);
+  /**
+  @include desktop {
+    background-color: #a9dc90;
+  }
+  @include tablet {
+    background-color: aquamarine;
+  }
+  @include mobile {
+    background-color: antiquewhite;
+  }
+  */
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+h3, h4 {
+  font-weight: 500;
+}
+
+h1 {
+  /**
+   Миксин для создания адаптивного текста, который масштабируется в зависимости от ширины экрана. Использует функцию
+   clamp, чтобы установить размер шрифта в промежутке между $min и $max, который автоматически масштабируется с помощью
+   vw (относительные единицы ширины viewport).
+   */
+  font-size: clamp(40px, 5.7971014493vw, 80px);
+}
+
+h2 {
+  /**
+   Миксин для создания адаптивного текста, который масштабируется в зависимости от ширины экрана. Использует функцию
+   clamp, чтобы установить размер шрифта в промежутке между $min и $max, который автоматически масштабируется с помощью
+   vw (относительные единицы ширины viewport).
+   */
+  font-size: clamp(16px, 3.5507246377vw, 49px);
+}
+
+h3 {
+  /**
+   Миксин для создания адаптивного текста, который масштабируется в зависимости от ширины экрана. Использует функцию
+   clamp, чтобы установить размер шрифта в промежутке между $min и $max, который автоматически масштабируется с помощью
+   vw (относительные единицы ширины viewport).
+   */
+  font-size: clamp(8px, 1.8115942029vw, 25px);
+}
+
+h4 {
+  /**
+   Миксин для создания адаптивного текста, который масштабируется в зависимости от ширины экрана. Использует функцию
+   clamp, чтобы установить размер шрифта в промежутке между $min и $max, который автоматически масштабируется с помощью
+   vw (относительные единицы ширины viewport).
+   */
+  font-size: clamp(7px, 1.5942028986vw, 22px);
+}
+
+.button {
+  /**
+  Миксин для выравнивания элементов по центру с использованием Flexbox. Устанавливает контейнеру свойство
+  flex-контейнера, определенное значение justify-content и align-items, чтобы центрировать его дочерние элементы как по
+  горизонтали, так и по вертикали. Параметр $isInline используется для определения, должен ли контейнер использовать
+  display: inline-flex; или display: flex;.
+  */
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: var(--button-height);
+  padding-inline: 44px;
+  font-size: 18px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  border: var(--border);
+  border-radius: var(--border-radius);
+}
+@media (max-width: 1023px) {
+  .button {
+    height: var(--button-height-tablet);
+    padding-inline: 31px;
+    font-size: 13px;
+  }
+}
+@media (hover: hover) {
+  .button:hover {
+    color: var(--color-green);
+    background-color: var(--color-white);
+  }
+}
+@media (hover: none) {
+  .button:active {
+    color: var(--color-green);
+    background-color: var(--color-white);
+  }
+}
+.button--transparent {
+  color: var(--color-dark);
+  background-color: transparent;
+}
+
+.burger-button {
+  /**
+  Миксин для сброса стилей по умолчанию для кнопок. Устанавливает нулевую отступ, прозрачный цвет фона и удаляет
+  границу, делая кнопку полностью кастомизируемой с помощью других стилей.
+  */
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  /**
+  Миксин для создания квадратного блока с заданным размером. Он устанавливает ширину блока равной $size и задает
+  соотношение сторон 1:1 с помощью свойства aspect-ratio. Это позволяет создавать квадратные элементы,
+  используя только одно значение размера.
+  */
+  width: 48px;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: var(--border-radius-small);
+}
+@media (hover: hover) {
+  .burger-button:hover {
+    background-color: var(--color-green-light);
+  }
+}
+@media (hover: none) {
+  .burger-button:active {
+    background-color: var(--color-green-light);
+  }
+}
+.burger-button::after {
+  /**
+  Миксин используется для абсолютного позиционирования элемента в центре родительского контейнера. Устанавливает
+  абсолютное позиционирование, а затем с помощью свойств top, left и translate
+  (должно быть transform: translate(-50%, -50%);) перемещает элемент так, чтобы его центр совпадал с центром
+  родительского блока. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: -50% -50%;
+          transform: -50% -50%;
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: var(--color-dark);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 -8px, 0 8px;
+          box-shadow: 0 -8px, 0 8px;
+}
+
+.header {
+  padding-top: 30px;
+}
+@media (max-width: 1280px) {
+  .header {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .header {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    padding-top: 5px;
+  }
+}
+.header__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
+}
+.header__logo {
+  max-width: 100px;
+}
+@media (max-width: 1023px) {
+  .header__logo {
+    max-width: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .header__logo {
+    max-width: 120px;
+  }
+}
+.header__menu {
+  margin: auto;
+  font-size: 18px;
+}
+@media (max-width: 1023px) {
+  .header__menu {
+    font-size: 16px;
+  }
+}
+.header__menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 80px;
+     -moz-column-gap: 80px;
+          column-gap: 80px;
+}
+@media (max-width: 1023px) {
+  .header__menu-list {
+    -webkit-column-gap: 31px;
+       -moz-column-gap: 31px;
+            column-gap: 31px;
+  }
+}
+.header__menu-link {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+}
+@media (hover: hover) {
+  .header__menu-link:hover::after {
+    width: 100%;
+  }
+}
+@media (hover: none) {
+  .header__menu-link:active::after {
+    width: 100%;
+  }
+}
+.header__menu-link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-green);
+  -webkit-transition-duration: inherit;
+          transition-duration: inherit;
+}
+
+.cross-button {
+  /**
+  Миксин для сброса стилей по умолчанию для кнопок. Устанавливает нулевую отступ, прозрачный цвет фона и удаляет
+  границу, делая кнопку полностью кастомизируемой с помощью других стилей.
+  */
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  /**
+  Миксин для создания квадратного блока с заданным размером. Он устанавливает ширину блока равной $size и задает
+  соотношение сторон 1:1 с помощью свойства aspect-ratio. Это позволяет создавать квадратные элементы,
+  используя только одно значение размера.
+  */
+  width: 48px;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: var(--border-radius-small);
+}
+@media (hover: hover) {
+  .cross-button:hover {
+    background-color: var(--color-green-light);
+  }
+}
+@media (hover: none) {
+  .cross-button:active {
+    background-color: var(--color-green-light);
+  }
+}
+.cross-button::before, .cross-button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  width: 60%;
+  height: 2px;
+  background-color: var(--color-dark);
+  border-radius: 5px;
+}
+.cross-button::before {
+  rotate: 45deg;
+}
+.cross-button::after {
+  rotate: -45deg;
+}
+
+.mobile-overlay {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 41px 21px;
+  border: none;
+}
+.mobile-overlay:modal {
+  max-width: 100%;
+  max-height: 100%;
+}
+.mobile-overlay__close-button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.mobile-overlay__list {
+  /**
+  Миксин для выравнивания элементов по центру с использованием Flexbox. Устанавливает контейнеру свойство
+  flex-контейнера, определенное значение justify-content и align-items, чтобы центрировать его дочерние элементы как по
+  горизонтали, так и по вертикали. Параметр $isInline используется для определения, должен ли контейнер использовать
+  display: inline-flex; или display: flex;.
+  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 60px;
+  min-height: 80vh;
+}
+
+.section {
+  padding-block: var(--section-padding-y);
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: var(--section-padding-y);
+}
+@media (max-width: 1280px) {
+  .hero {
+    row-gap: 60px;
+  }
+}
+.hero__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+@media (max-width: 767px) {
+  .hero__main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+.hero__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  row-gap: 25px;
+  max-width: 522px;
+}
+@media (max-width: 767px) {
+  .hero__body {
+    display: contents;
+  }
+}
+@media (max-width: 767px) {
+  .hero__title {
+    -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+            order: -2;
+    margin-bottom: 10px;
+  }
+}
+.hero__description {
+  font-size: 18px;
+  line-height: 1.6;
+}
+@media (max-width: 767px) {
+  .hero__description {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 1280px) {
+  .hero__image {
+    max-width: 60%;
+    height: auto;
+  }
+}
+@media (max-width: 1023px) {
+  .hero__image {
+    max-width: 40%;
+    height: auto;
+  }
+}
+@media (max-width: 767px) {
+  .hero__image {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}

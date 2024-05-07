@@ -1,0 +1,58 @@
+body {
+  @include fluid-text(18, 16);
+
+  /**
+  @include desktop {
+    background-color: #a9dc90;
+  }
+  @include tablet {
+    background-color: aquamarine;
+  }
+  @include mobile {
+    background-color: antiquewhite;
+  }
+  */
+
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2 {
+  font-weight: 600;
+}
+
+h3, h4 {
+  font-weight: 500;
+}
+
+h1 {
+  @include fluid-text(80, 40)
+}
+
+h2 {
+  @include fluid-text(49, 16)
+}
+
+h3 {
+  @include fluid-text(25, 8)
+}
+
+h4 {
+  @include fluid-text(22, 7)
+}

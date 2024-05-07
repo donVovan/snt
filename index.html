@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assetc/css/styles.css">
+    <title>СНТ "Виктория-2"</title>
+</head>
+<body>
+<header class="header">
+    <div class="header__inner container">
+        <a href="/" class="header__logo logo">
+            <img
+                    class="logo__image"
+                    src="./assetc/images/logo4.svg"
+                    alt="СНТ 'Виктория-2'"
+                    loading="lazy"
+            />
+        </a>
+        <nav class="header__menu hidden-mobile">
+            <ul class="header__menu-list">
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="">Новости</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="">Членам СНТ</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="">Гостям</a>
+                </li>
+                <li class="header__menu-item">
+                    <a class="header__menu-link" href="">Правление</a>
+                </li>
+            </ul>
+        </nav>
+        <button
+                class="header__button button hidden-mobile"
+                type="button"
+        >
+            Войти
+        </button>
+        <button
+                class="button__burger-menu burger-button visible-mobile"
+                type="button"
+                onclick="mobileOverlay.showModal()"
+        >
+            <span class="visually-hidden">Открыть меню</span>
+        </button>
+    </div>
+</header>
+<main class="content">
+    <section class="section container">
+        <div class="section__body">
+            <div class="hero">
+                <div class="hero__main">
+                    <div class="hero__body">
+                        <h1 class="hero__title">
+                            Хорошего отдыха!
+                        </h1>
+                        <div class="hero__description">
+                            <p>Какой-то приветственный текст. Типа бла-бла-бла, мы рады Вас приветствовать на сайте нашего СНТ, всю необходимую информацию вы можете найти в соответствующих разделах</p>
+                        </div>
+                    </div>
+                    <img
+                            class="hero__image"
+                            src="./assetc/images/hero-bg.svg"
+                            alt=""
+                            width="571"
+                            height="357"
+                            loading="lazy"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+    <form class="mobile-overlay__close-button-wrapper" method="dialog">
+        <button
+                class="mobile-overlay__close-button cross-button"
+                type="submit"
+        >
+            <span class="visually-hidden">Close navigation menu</span>
+        </button>
+    </form>
+    <div class="mobile-overlay__body">
+        <ul class="mobile-overlay__list">
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link"  href="/">Новости</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link"  href="/">Членам СНТ</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link"  href="/">Гостям</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link"  href="/">Правление</a>
+            </li>
+            <li class="mobile-overlay__item">
+                <a class="mobile-overlay__link"  href="/">Войти</a>
+            </li>
+        </ul>
+    </div>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,80 @@
+.header {
+  padding-top: 30px;
+
+  @include desktop {
+    padding-top: 20px;
+  }
+
+  @include tablet {
+    padding-top: 10px;
+  }
+
+  @include mobile {
+    padding-top: 5px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+  }
+
+  &__logo {
+    max-width: 100px;
+
+    @include tablet {
+      max-width: 80px;
+    }
+
+    @include mobile {
+      max-width: 120px;
+    }
+
+  }
+
+  &__menu {
+    margin: auto;
+    font-size: 18px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 80px;
+
+
+      @include tablet {
+        column-gap: 31px;
+      }
+
+    }
+    &-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      height: 40px;
+
+      @include hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-green);
+        transition-duration: inherit;
+      }
+    }
+  }
+}
