@@ -759,3 +759,9 @@ h4 {
     margin-bottom: 20px;
   }
 }
+
+.puddle-bg {
+  padding-inline: 7px;
+  background-color: var(--color-green-light);
+  border-radius: var(--border-radius-small);
+}
