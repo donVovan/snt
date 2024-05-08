@@ -1,0 +1,25 @@
+.chapter-card {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  min-height: 310px;
+  padding: 50px;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: 30px;
+  }
+
+  // Тут текст новости (в оригинале картинка с &__image {align-self:center}
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+}
