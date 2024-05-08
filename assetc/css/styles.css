@@ -702,8 +702,23 @@ h4 {
      -moz-column-gap: 40px;
           column-gap: 40px;
 }
+@media (max-width: 767px) {
+  .section__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 30px;
+    text-align: center;
+  }
+}
 .section__header:not(:last-child) {
   margin-bottom: 80px;
+}
+@media (max-width: 767px) {
+  .section__header:not(:last-child) {
+    margin-bottom: 40px;
+  }
 }
 .section__description {
   max-width: 580px;
