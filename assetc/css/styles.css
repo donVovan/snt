@@ -815,100 +815,6 @@ h4 {
   margin-bottom: 100px;
 }
 
-.chapter-card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-column-gap: 30px;
-     -moz-column-gap: 30px;
-          column-gap: 30px;
-  min-height: 310px;
-  padding: 50px;
-  border: var(--border);
-  border-radius: var(--border-radius);
-  -webkit-box-shadow: var(--shadow);
-          box-shadow: var(--shadow);
-}
-.chapter-card__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  row-gap: 30px;
-}
-.chapter-card__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-}
-.chapter-card__link {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-column-gap: 15px;
-     -moz-column-gap: 15px;
-          column-gap: 15px;
-  font-size: 20px;
-}
-@media (hover: hover) {
-  .chapter-card__link:hover {
-    opacity: 0.7;
-  }
-}
-@media (hover: none) {
-  .chapter-card__link:active {
-    opacity: 0.7;
-  }
-}
-.chapter-card__link-icon-wrapper {
-  /**
-  Миксин для выравнивания элементов по центру с использованием Flexbox. Устанавливает контейнеру свойство
-  flex-контейнера, определенное значение justify-content и align-items, чтобы центрировать его дочерние элементы как по
-  горизонтали, так и по вертикали. Параметр $isInline используется для определения, должен ли контейнер использовать
-  display: inline-flex; или display: flex;.
-  */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /**
-  Миксин для создания квадратного блока с заданным размером. Он устанавливает ширину блока равной $size и задает
-  соотношение сторон 1:1 с помощью свойства aspect-ratio. Это позволяет создавать квадратные элементы,
-  используя только одно значение размера.
-  */
-  width: 41px;
-  aspect-ratio: 1;
-  background-color: currentColor;
-  border-radius: 50%;
-}
-.chapter-card__link-icon-wrapper svg {
-  color: var(--color-green-light);
-}
-
 .banner {
   --bannerImageOffsetY: 24px;
   padding-block: var(--bannerImageOffsetY);
@@ -937,7 +843,4 @@ h4 {
           align-items: start;
   row-gap: 26px;
   padding: 60px;
-}
-.banner__image {
-  margin-block: calc(var(--bannerImageOffsetY) * -1);
 }

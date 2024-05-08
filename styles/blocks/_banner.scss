@@ -20,8 +20,8 @@
   //&__description {
   //  max-width: 500px;
   //}
-
-  &__image {
-    margin-block: calc(var(--bannerImageOffsetY) * -1);
-  }
+// вернуть, если надо вставить картинку в текст, в разметке картинке дать класс banner__image
+  //&__image {
+  //  margin-block: calc(var(--bannerImageOffsetY) * -1);
+  //}
 }
