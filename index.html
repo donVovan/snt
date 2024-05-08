@@ -11,7 +11,7 @@
 <body>
 <header class="header">
     <div class="header__inner container">
-        <a href="/" class="header__logo logo">
+        <a class="header__logo logo" id="logo">
             <img
                     class="logo__image"
                     src="./assetc/images/logo4.svg"
@@ -60,7 +60,7 @@
                             Добро пожаловать!
                         </h1>
                         <div class="hero__description">
-                            <p>Вы находитесь на официальном сайте СНТ "Виктория-2", поселение Совьяки, Боровский район, Калужская область. Этот проект создан, в первую очередь, для информирования членов СНТ, для упрощения связи с Правлением, для общения и обмена информацией. Мы будем рады любой инициативе. Если у Вас есть пожелания по работе сайта, пишите нам.</p>
+                            <p>Вы находитесь на официальном сайте СНТ "Виктория-2", деревня Митяево, Боровский район, Калужская область. Этот проект создан, в первую очередь, для информирования членов СНТ, для упрощения связи с Правлением, для общения и обмена информацией. Мы будем рады любой инициативе. Если у Вас есть пожелания по работе сайта, пишите нам.</p>
                         </div>
                     </div>
                     <img
@@ -77,9 +77,41 @@
     </section>
     <section class="section container">
         <div class="section__header">
+            <img
+                    class="section__image"
+                    src="./assetc/images/strawberries.svg"
+                    alt=""
+                    width="360"
+                    height="360"
+                    loading="lazy"
+            >
             <h2 class="section__title puddle-bg"><a id="news">Новости</a></h2>
+            <div class="section_description">
+                <p></p>
+            </div>
         </div>
-        <div class="section__body"></div>
+        <div class="section__body">
+            <div class="chapter">
+                <ul class="chapter__list">
+                    <li class="chapter__item">
+                        <article class="chapter-card">
+                            <div class="chapter-card__body">
+                                <h3 class="chapter-card__title">
+                                    <span class="puddle-bg">возможно здесь</span>
+                                    <span class="puddle-bg">заголовок новости</span>
+                                </h3>
+                                <a class="chapter-card__link" href="#logo">
+                                    <span class="chapter-card__link-icon-wrapper"></span>
+                                    <span class="chapter-card__link-label">назад</span>
+                                </a>
+                            </div>
+                            <div class="chapter-card__something"></div>
+                        </article>
+                    </li>
+                </ul>
+                <div class="chapter__banner banner"></div>
+            </div>
+        </div>
     </section>
 </main>
 <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
