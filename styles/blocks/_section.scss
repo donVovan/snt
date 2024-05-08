@@ -12,15 +12,15 @@
 
     @include mobile {
       flex-direction: column;
-      row-gap: 30px;
+      row-gap: 10px;
       text-align: center;
     }
 
     &:not(:last-child) {
-      margin-bottom: 80px;
+      margin-bottom: 30px;
 
       @include mobile {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
       }
     }
   }
@@ -28,5 +28,18 @@
   // ЭКСПЕРИМЕНТАЛЬНО! НЕ ИСПОЛЬЗУЕТСЯ! удалить section__description и div с этим классом в разметке
   &__description {
     max-width: 580px;
+  }
+
+  &__image {
+
+    @include desktop {
+      max-width: 60%;
+      height: auto;
+    }
+
+    @include tablet {
+      max-width: 40%;
+      height: auto;
+    }
   }
 }
