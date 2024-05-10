@@ -3,6 +3,10 @@
 
   padding-block: var(--bannerImageOffsetY);
 
+  @include tablet {
+    --bannerImageOffsetY: 0;
+  }
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -15,13 +19,28 @@
     align-items: start;
     row-gap: 26px;
     padding: 60px;
-  }
 
-  //&__description {
-  //  max-width: 500px;
-  //}
+    @include tablet {
+      padding: 50px;
+    }
+
+    @include mobile {
+      row-gap: 20px;
+    }
+  }
+  &__button {
+
+    @include mobile {
+      width: 100%;
+      align-self: center;
+    }
+}
+
+//&__description {
+//  max-width: 500px;
+//}
 // вернуть, если надо вставить картинку в текст, в разметке картинке дать класс banner__image
-  //&__image {
-  //  margin-block: calc(var(--bannerImageOffsetY) * -1);
-  //}
+//&__image {
+//  margin-block: calc(var(--bannerImageOffsetY) * -1);
+//}
 }

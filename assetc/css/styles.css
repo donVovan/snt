@@ -225,7 +225,7 @@ svg * {
   --section-padding-y: 60px;
   --input-height: 59px;
   --button-height: 55px;
-  --button-height-tablet: 39px;
+  --button-height-tablet: 45px;
   --transition-duration: 0.2s;
 }
 @media (max-width: 1280px) {
@@ -382,7 +382,7 @@ h4 {
   .button {
     height: var(--button-height-tablet);
     padding-inline: 31px;
-    font-size: 13px;
+    font-size: 20px;
   }
 }
 @media (hover: hover) {
@@ -846,6 +846,11 @@ h4 {
   --bannerImageOffsetY: 24px;
   padding-block: var(--bannerImageOffsetY);
 }
+@media (max-width: 1023px) {
+  .banner {
+    --bannerImageOffsetY: 0;
+  }
+}
 .banner__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -870,4 +875,22 @@ h4 {
           align-items: start;
   row-gap: 26px;
   padding: 60px;
+}
+@media (max-width: 1023px) {
+  .banner__body {
+    padding: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .banner__body {
+    row-gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .banner__button {
+    width: 100%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
