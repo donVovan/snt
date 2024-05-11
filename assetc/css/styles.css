@@ -354,6 +354,77 @@ h4 {
   font-size: clamp(7px, 1.5942028986vw, 22px);
 }
 
+.radios {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 35px;
+     -moz-column-gap: 35px;
+          column-gap: 35px;
+}
+
+.radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 14px;
+     -moz-column-gap: 14px;
+          column-gap: 14px;
+}
+.radio__emulator {
+  /**
+  Миксин для выравнивания элементов по центру с использованием Flexbox. Устанавливает контейнеру свойство
+  flex-контейнера, определенное значение justify-content и align-items, чтобы центрировать его дочерние элементы как по
+  горизонтали, так и по вертикали. Параметр $isInline используется для определения, должен ли контейнер использовать
+  display: inline-flex; или display: flex;.
+  */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /**
+  Миксин для создания квадратного блока с заданным размером. Он устанавливает ширину блока равной $size и задает
+  соотношение сторон 1:1 с помощью свойства aspect-ratio. Это позволяет создавать квадратные элементы,
+  используя только одно значение размера.
+  */
+  width: 28px;
+  aspect-ratio: 1;
+  position: relative;
+  background-color: var(--color-white);
+  border: var(--border);
+  border-radius: 50%;
+}
+.radio__emulator::after {
+  /**
+  Миксин используется для абсолютного позиционирования элемента в центре родительского контейнера. Устанавливает
+  абсолютное позиционирование, а затем с помощью свойств top, left и translate
+  (должно быть transform: translate(-50%, -50%);) перемещает элемент так, чтобы его центр совпадал с центром
+  родительского блока. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  /**
+  Миксин для создания квадратного блока с заданным размером. Он устанавливает ширину блока равной $size и задает
+  соотношение сторон 1:1 с помощью свойства aspect-ratio. Это позволяет создавать квадратные элементы,
+  используя только одно значение размера.
+  */
+  width: 60%;
+  aspect-ratio: 1;
+  content: "";
+  background-color: var(--color-green-light);
+  border-radius: inherit;
+}
+
 .button {
   /**
   Миксин для выравнивания элементов по центру с использованием Flexbox. Устанавливает контейнеру свойство
@@ -481,8 +552,8 @@ h4 {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: -50% -50%;
-          transform: -50% -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   content: "";
   width: 50%;
   height: 2px;
@@ -629,7 +700,7 @@ h4 {
   content: "";
   position: absolute;
   top: 50%;
-  left: 24px;
+  left: 24%;
   width: 60%;
   height: 2px;
   background-color: var(--color-dark);
@@ -893,4 +964,26 @@ h4 {
         -ms-grid-row-align: center;
         align-self: center;
   }
+}
+
+.contact-us {
+  padding: 60px 100px 80px;
+  background-color: var(--color-light);
+  border-radius: var(--border-radius);
+}
+.contact-us__form, .contact-us__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.contact-us__form {
+  row-gap: 40px;
+  max-width: 476px;
+}
+.contact-us__body {
+  row-gap: 25px;
 }
