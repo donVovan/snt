@@ -373,6 +373,21 @@ h4 {
   -webkit-column-gap: 14px;
      -moz-column-gap: 14px;
           column-gap: 14px;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
+}
+@media (hover: hover) {
+  .radio:hover {
+    opacity: 0.6;
+  }
+}
+@media (hover: none) {
+  .radio:active {
+    opacity: 0.6;
+  }
+}
+.radio__input:not(:checked) + .radio__emulator::after {
+  opacity: 0;
 }
 .radio__emulator {
   /**
@@ -423,6 +438,8 @@ h4 {
   content: "";
   background-color: var(--color-green-light);
   border-radius: inherit;
+  -webkit-transition-duration: var(--transition-duration);
+          transition-duration: var(--transition-duration);
 }
 
 .button {
