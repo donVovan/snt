@@ -290,6 +290,72 @@
                     </div>
                 </div>
             </div>-->
+            <div class="contact-us">
+                <form class="contact-us__form">
+                    <fieldset class="contact-us__request-types radios">
+                        <legend class="radios__title">Request types</legend>
+                        <label class="radios__item radio">
+                            <input
+                                    class="radio__input visually-hidden"
+                                    name="request-type"
+                                    type="radio"
+                                    value="Say Hi"
+                                    checked
+                            />
+                            <span class="radio__emulator"></span>
+                            <span class="radio__label">Поздороваться</span>
+                        </label>
+                        <label class="radios__item radio">
+                            <input
+                                    class="radio__input visually-hidden"
+                                    name="request-type"
+                                    type="radio"
+                                    value="Get a Quote"
+                            />
+                            <span class="radio__emulator"></span>
+                            <span class="radio__label">Задать вопрос</span>
+                        </label>
+                    </fieldset>
+                    <div class="contact-us__body">
+                        <div class="contact-us__field field">
+                            <label class="field__label" for="name">Имя</label>
+                            <input
+                                    class="field__input"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Имя"
+                            />
+                        </div>
+                        <div class="contact-us__field field">
+                            <label class="field__label" for="email">Email*</label>
+                            <input
+                                    class="field__input"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    type="email"
+                                    required
+                            />
+                        </div>
+                        <div class="contact-us__field field">
+                            <label class="field__label" for="message">Сообщение*</label>
+                            <textarea
+                                    class="field__input field__input--textarea"
+                                    id="message"
+                                    name="message"
+                                    placeholder="Сообщение"
+                                    required
+                            ></textarea>
+                        </div>
+                    </div>
+                    <button
+                            class="contact-us__button button"
+                            type="submit"
+                    >
+                        Отправить сообщение
+                    </button>
+                </form>
+            </div>
 
         </div>
     </section>
