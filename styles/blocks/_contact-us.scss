@@ -1,7 +1,22 @@
 .contact-us {
+  position: relative;
   padding: 60px 100px 80px;
-  background-color: var(--color-light);
+  background-color: var(--color-white);
   border-radius: var(--border-radius);
+  overflow-x: hidden;
+
+  &::after {
+    --contactUsImageOffsetY: 62px;
+
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    translate: -50% -50%;
+    height: calc(100% - var(--contactUsImageOffsetY) * 2 );
+    aspect-ratio: 1;
+    background: url("../../assetc/images/cherry.svg") center/contain no-repeat;
+  }
 
   &__form,
   &__body {
