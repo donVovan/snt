@@ -1,9 +1,12 @@
 .contact-us {
   position: relative;
-  padding: 60px 100px 80px;
-  background-color: var(--color-white);
-  border-radius: var(--border-radius);
   overflow-x: hidden;
+
+  @include mobile-above {
+    padding: 60px 100px 80px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+  }
 
   &::after {
     --contactUsImageOffsetY: 62px;
@@ -16,6 +19,10 @@
     height: calc(100% - var(--contactUsImageOffsetY) * 2 );
     aspect-ratio: 1;
     background: url("../../assetc/images/cherry.svg") center/contain no-repeat;
+
+    @include desktop {
+      display: none;
+    }
   }
 
   &__form,
@@ -24,12 +31,30 @@
     flex-direction: column;
   }
 
+  &__requests-types {
+    @include mobile {
+      padding: 40px 52px 36px;
+    }
+  }
+
   &__form {
-    row-gap: 40px;
-    max-width: 476px;
+
+    @include desktop-above {
+      max-width: 476px;
+    }
+
+    @include mobile-above {
+      row-gap: 40px;
+    }
   }
 
   &__body {
     row-gap: 25px;
+
+    @include mobile {
+      row-gap: 20px;
+      margin-bottom: 30px;
+      padding: 10px 30px 50px;
+    }
   }
 }
