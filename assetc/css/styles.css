@@ -367,7 +367,9 @@ h4 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  row-gap: 5px;
+  -webkit-column-gap: 5px;
+     -moz-column-gap: 5px;
+          column-gap: 5px;
 }
 @media (max-width: 767px) {
   .field {
@@ -1239,6 +1241,27 @@ h4 {
     color: var(--color-green);
   }
 }
+.footer__extra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
+}
+.footer__dev-link {
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .footer__dev-link:hover {
+    color: var(--color-green);
+  }
+}
+@media (hover: none) {
+  .footer__dev-link:active {
+    color: var(--color-green);
+  }
+}
 
 .soc1als__list {
   display: -webkit-box;
@@ -1297,8 +1320,6 @@ h4 {
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
           column-gap: 20px;
-  width: 100%;
-  max-width: 634px;
   padding: 58px 40px;
   background-color: var(--color-green-light);
   border-radius: var(--border-radius);

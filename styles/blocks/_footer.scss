@@ -72,4 +72,17 @@
       }
     }
   }
+
+  &__extra {
+    display: flex;
+    column-gap: 40px;
+  }
+
+  &__dev-link {
+    text-decoration: underline;
+
+    @include hover {
+      color: var(--color-green);
+    }
+  }
 }
