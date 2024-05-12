@@ -11,5 +11,65 @@
     justify-content: space-between;
     align-items: center;
     column-gap: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      height: 30px;
+      text-decoration: underline;
+
+      @include hover {
+        color: var(--color-green);
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 50px;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+      border-bottom: 2px solid var(--color-green);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 27px;
+
+    &-title {
+      color: var(--color-white);
+    }
+
+    &-body {
+      font-style: normal;
+
+      p {
+        --paragraphMarginBottom: 20px;
+      }
+
+      a {
+        @include hover {
+          color: var(--color-green);
+        }
+      }
+    }
   }
 }

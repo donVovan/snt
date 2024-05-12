@@ -1143,6 +1143,88 @@ h4 {
      -moz-column-gap: 30px;
           column-gap: 30px;
 }
+.footer__navigation:not(:last-child) {
+  margin-bottom: 66px;
+}
+.footer__menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
+}
+.footer__menu-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  text-decoration: underline;
+}
+@media (hover: hover) {
+  .footer__menu-link:hover {
+    color: var(--color-green);
+  }
+}
+@media (hover: none) {
+  .footer__menu-link:active {
+    color: var(--color-green);
+  }
+}
+.footer__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 50px;
+     -moz-column-gap: 50px;
+          column-gap: 50px;
+}
+.footer__body:not(:last-child) {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 2px solid var(--color-green);
+}
+.footer__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  row-gap: 27px;
+}
+.footer__contacts-title {
+  color: var(--color-white);
+}
+.footer__contacts-body {
+  font-style: normal;
+}
+.footer__contacts-body p {
+  --paragraphMarginBottom: 20px;
+}
+@media (hover: hover) {
+  .footer__contacts-body a:hover {
+    color: var(--color-green);
+  }
+}
+@media (hover: none) {
+  .footer__contacts-body a:active {
+    color: var(--color-green);
+  }
+}
 
 .soc1als__list {
   display: -webkit-box;
@@ -1178,6 +1260,16 @@ h4 {
   color: var(--color-dark);
   background-color: var(--color-white);
   border-radius: 50%;
+}
+@media (hover: hover) {
+  .soc1als__link:hover {
+    background-color: var(--color-green-light);
+  }
+}
+@media (hover: none) {
+  .soc1als__link:active {
+    background-color: var(--color-green-light);
+  }
 }
 .soc1als__link svg {
   width: 100%;
