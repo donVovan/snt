@@ -757,7 +757,7 @@ h4 {
   left: 50%;
   translate: -50%;
   width: 0;
-  height: 2px;
+  height: 4px;
   background-color: var(--color-green);
   -webkit-transition-duration: inherit;
           transition-duration: inherit;
