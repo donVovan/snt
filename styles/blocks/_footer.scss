@@ -1,0 +1,15 @@
+.footer {
+  &__inner {
+    padding: 55px 60px 50px;
+    background-color: var(--color-white);
+    border-color: var(--color-green-border);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+  }
+}

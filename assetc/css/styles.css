@@ -1122,3 +1122,64 @@ h4 {
     padding: 10px 30px 50px;
   }
 }
+
+.footer__inner {
+  padding: 55px 60px 50px;
+  background-color: var(--color-white);
+  border-color: var(--color-green-border);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+.footer__navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+
+.soc1als__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+}
+.soc1als__link {
+  /**
+  Миксин для выравнивания элементов по центру с использованием Flexbox. Устанавливает контейнеру свойство
+  flex-контейнера, определенное значение justify-content и align-items, чтобы центрировать его дочерние элементы как по
+  горизонтали, так и по вертикали. Параметр $isInline используется для определения, должен ли контейнер использовать
+  display: inline-flex; или display: flex;.
+  */
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /**
+  Миксин для создания квадратного блока с заданным размером. Он устанавливает ширину блока равной $size и задает
+  соотношение сторон 1:1 с помощью свойства aspect-ratio. Это позволяет создавать квадратные элементы,
+  используя только одно значение размера.
+  */
+  width: 30px;
+  aspect-ratio: 1;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+.soc1als__link svg {
+  width: 100%;
+  height: 100%;
+}
