@@ -355,13 +355,15 @@ h4 {
 }
 
 .field {
+  --fieldInputHeight: var(--input-height);
+  --fieldInputTextColor: var(--color-dark);
+  --fieldInputBgColor: var(--color-white);
+  --fieldInputBorderColor: var(--color-green);
+  --fieldInputPlaceholderColor: var(--color-dark);
+  --fieldInputHoverBgColor: var(--color-green-light);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
@@ -371,6 +373,16 @@ h4 {
   .field {
     row-gap: 10px;
   }
+}
+.field--big-height {
+  --fieldInputHeight: var(--button-height);
+}
+.field--dark-bg {
+  --fieldInputTextColor: var(--color-dark);
+  --fieldInputBgColor: var(--color-white);
+  --fieldInputBorderColor: var(--color-green);
+  --fieldInputPlaceholderColor: var(--color-green);
+  --fieldInputHoverBgColor: var(--color-green-light);
 }
 .field__label {
   /**
@@ -382,19 +394,21 @@ h4 {
 }
 .field__input {
   width: 100%;
-  height: var(--input-height);
+  height: var(--fieldInputHeight);
   padding-inline: 30px;
-  border: var(--border);
+  color: var(--fieldInputTextColor);
+  background-color: var(--fieldInputBgColor);
+  border: 2px solid var(--fieldInputBorderColor);
   border-radius: var(--border-radius-small);
 }
 @media (hover: hover) {
   .field__input:hover {
-    background-color: var(--color-green-light);
+    background-color: var(--fieldInputHoverBgColor);
   }
 }
 @media (hover: none) {
   .field__input:active {
-    background-color: var(--color-green-light);
+    background-color: var(--fieldInputHoverBgColor);
   }
 }
 @media (max-width: 767px) {
@@ -407,19 +421,19 @@ h4 {
   outline: none;
 }
 .field__input::-webkit-input-placeholder {
-  color: var(--color-dark);
+  color: var(--fieldInputPlaceholderColor);
 }
 .field__input::-moz-placeholder {
-  color: var(--color-dark);
+  color: var(--fieldInputPlaceholderColor);
 }
 .field__input:-ms-input-placeholder {
-  color: var(--color-dark);
+  color: var(--fieldInputPlaceholderColor);
 }
 .field__input::-ms-input-placeholder {
-  color: var(--color-dark);
+  color: var(--fieldInputPlaceholderColor);
 }
 .field__input::placeholder {
-  color: var(--color-dark);
+  color: var(--fieldInputPlaceholderColor);
 }
 .field__input--textarea {
   height: 190px;
@@ -1274,4 +1288,18 @@ h4 {
 .soc1als__link svg {
   width: 100%;
   height: 100%;
+}
+
+.subscribe-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  width: 100%;
+  max-width: 634px;
+  padding: 58px 40px;
+  background-color: var(--color-green-light);
+  border-radius: var(--border-radius);
 }

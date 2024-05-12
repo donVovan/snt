@@ -1,0 +1,12 @@
+.subscribe-form {
+  &-field {
+
+  }
+  display: flex;
+  column-gap: 20px;
+  width: 100%;
+  max-width: 634px;
+  padding: 58px 40px;
+  background-color: var(--color-green-light);
+  border-radius: var(--border-radius);
+}
