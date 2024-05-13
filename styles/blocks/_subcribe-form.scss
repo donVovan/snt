@@ -1,10 +1,11 @@
 .subscribe-form {
-  &-field {
-
-  }
   display: flex;
   column-gap: 20px;
   padding: 58px 40px;
   background-color: var(--color-green-light);
   border-radius: var(--border-radius);
+
+  @include mobile {
+    padding: 10px 40px;
+  }
 }

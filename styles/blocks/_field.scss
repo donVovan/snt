@@ -7,9 +7,16 @@
    --fieldInputHoverBgColor: var(--color-green-light);
 
    display: flex;
-
    align-items: start;
    column-gap: 5px;
+
+   @include desktop {
+     flex-direction: column;
+     row-gap: 22px;
+     width: 100%;
+     max-width: 450px;
+     padding: 30px;
+   }
 
    @include mobile {
      row-gap: 10px;
